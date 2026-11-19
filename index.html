@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="description" content="FP SELECTION - Superesportivos e veículos premium com procedência">
+<meta name="theme-color" content="#050811">
+<title>FP SELECTION | Superesportivos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="site-bg" aria-hidden="true"><div class="glow glow-a"></div><div class="glow glow-b"></div><canvas class="bg-particles"></canvas></div>
+<div id="intro" aria-hidden="true"><div class="intro-inner"><img src="img/logo.png" alt=""><div class="intro-bar"><i id="intro-bar"></i></div><span class="intro-count" id="intro-count">000</span></div></div>
+
+<header class="topbar">
+  <a class="brand" href="#hero"><img src="img/logo (1).png" alt="FP SELECTION"></a>
+  <nav class="topnav" aria-label="Principal">
+    <a href="#hero" class="is-active">Home</a>
+    <a href="#engenharia-3d">Inspeção</a>
+    <a href="#especificacoes">Ficha técnica</a>
+    <a href="#acervo">Acervo</a>
+    <a href="#sobre">Sobre</a>
+    <a href="#contato">Contato</a>
+  </nav>
+  <a class="btn btn-glass concierge" href="#contato"><span class="ms">support_agent</span><span>Concierge</span></a>
+</header>
+
+<main>
+
+<!-- ================= HERO ================= -->
+<div class="hero-wrap" id="hero-wrap">
+<section class="hero" id="hero">
+
+  <div class="hero-word" id="hero-word" aria-hidden="true"></div>
+
+  <div class="hero-inner">
+    <div class="hero-stage" id="stage">
+      <div class="slide is-active" data-i="0"><div class="car photo"><img class="photo" src="img/carros/gtr15.png" alt="Nissan GT-R preto em vista frontal três quartos"></div></div>
+      <div class="slide" data-i="1"><div class="car"><img src="img/carros/ferrari.png" alt="Ferrari vermelha em showroom"></div></div>
+      <div class="slide" data-i="2"><div class="car"><img src="img/carros/porsche.png" alt="Porsche 911 branco conversível"></div></div>
+      <div class="floor"></div>
+      <button class="arrow prev" id="prev" aria-label="Veículo anterior"><span class="ms">chevron_left</span></button>
+      <button class="arrow next" id="next" aria-label="Próximo veículo"><span class="ms">chevron_right</span></button>
+    </div>
+
+    <div class="hero-info">
+      <div class="chip"><i class="dot-red"></i><span id="s-tag">ÚNICO DONO • ESPORTIVO</span></div>
+      <div class="title-row">
+        <h1 id="s-title">GTR</h1>
+        <span class="badge" id="s-badge">SPECIAL SPEC</span>
+      </div>
+      <p class="lead" id="s-desc"></p>
+
+      <div class="telemetry">
+        <div><b id="s-engine">V6</b><small>Motor</small></div>
+        <div><b id="s-power" class="odo-host">565</b><small>CV</small></div>
+        <div><b id="s-trac">4x4</b><small>Tração</small></div>
+      </div>
+
+      <div class="actions">
+        <div class="counter"><b id="s-num">01</b><small>Modelos</small></div>
+        <div class="btns">
+          <a class="btn btn-glass" href="#engenharia-3d">Raio-X</a>
+          <a class="btn btn-red" href="#contato">Proposta <span class="ms">trending_flat</span></a>
+        </div>
+      </div>
+
+      <div class="progress" id="progress">
+        <button aria-label="Slide 01" class="is-active"></button>
+        <button aria-label="Slide 02"></button>
+        <button aria-label="Slide 03"></button>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+
+
+<!-- ================= ENGENHARIA 3D ================= -->
+<section class="sec sec-eng" id="engenharia-3d">
+  <div class="wrap">
+    <header class="sec-head">
+      <span class="eyebrow cyan"><i class="dot-cyan"></i>Inspeção real</span>
+      <h2>Veja o GTR por fora, por dentro e em malha 3D</h2>
+      <p>Arraste sobre a imagem para passar a varredura e ver a malha 3D por baixo da pintura. No tour, o capô abre e mostra o motor, depois vêm o painel e os bancos.</p>
+    </header>
+
+    <div class="viewer" id="xray">
+      <div class="hud">
+        <span class="hud-pill"><i class="dot-red"></i><span id="hud-status">INSPEÇÃO · FRENTE</span></span>
+        <span class="hud-pill cyan" id="hud-pct">VARREDURA: 0%</span>
+      </div>
+      <div class="gt-stage" id="gt-stage" role="img" aria-label="GTR">
+        <div class="gt-world" id="gt-world">
+          <div id="gt-imgs"></div>
+          <i class="xr-scan" id="xr-scan"></i>
+          <div class="xr-notes" id="xr-notes"></div>
+        </div>
+        <button class="gt-open btn btn-glass sm" id="gt-open" hidden><span class="ms">open_in_full</span><span id="gt-open-t">Abrir capô</span></button>
+      </div>
+    </div>
+
+    <div class="gt-colors" id="gt-colors" role="group" aria-label="Cor da malha"><span>Cor da malha</span></div>
+
+    <div class="gt-chips" id="gt-chips" aria-label="Escolher vista"></div>
+
+    <div class="xr-log">
+      <button id="xr-play" aria-label="Pausar tour"><svg viewBox="0 0 12 12" aria-hidden="true"><path id="xr-pi" d="M2 1h3v10H2zM7 1h3v10H7z"/></svg></button>
+      <div class="xr-log-main">
+        <div class="xr-log-h"><span id="xr-mode">FRENTE · RENDER</span><span>Tour automático</span></div>
+        <div id="xr-rail" role="slider" tabindex="0" aria-label="Linha do tempo do tour" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="b"></div><div id="xr-fill"></div><div id="xr-knob"></div></div>
+        <div class="xr-log-f"><span id="xr-tc">00:00 / 00:00</span><span>Arraste a imagem para varrer</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ESPECIFICAÇÕES (vídeo de fundo) ================= -->
+<section class="sec specs" id="especificacoes">
+  <div class="specs-bg" aria-hidden="true">
+    <div class="specs-slides"><i></i><i></i><i></i></div>
+    <video id="specs-video" muted loop playsinline preload="metadata" tabindex="-1"></video>
+    <div class="specs-shade"></div>
+  </div>
+  <div class="wrap specs-in">
+    <header class="sec-head">
+      <span class="eyebrow cyan"><i class="dot-cyan"></i>Ficha técnica</span>
+      <h2>Especificações</h2>
+      <p>Escolha o carro e veja os números principais.</p>
+    </header>
+    <div class="spec-tabs" id="sp-tabs" role="tablist" aria-label="Escolher carro"></div>
+    <div class="spec-grid">
+      <div class="spec"><small>Motor</small><div class="spec-v"><b id="sp-engine">V6</b></div></div>
+      <div class="spec"><small>Potência</small><div class="spec-v"><b id="sp-power">565</b><em>CV</em></div></div>
+      <div class="spec"><small>Tração</small><div class="spec-v"><b id="sp-trac">4x4</b></div></div>
+    </div>
+    <div class="spec-pills"><span>Único dono</span><span>Esportivo</span><span id="sp-badge">Special spec</span></div>
+  </div>
+</section>
+
+<!-- ================= ACERVO ================= -->
+<section class="sec" id="acervo">
+  <div class="wrap">
+    <header class="sec-head">
+      <span class="eyebrow cyan"><i class="dot-cyan"></i>Showroom disponível</span>
+      <h2>Acervo exclusivo</h2>
+      <p>Veículos selecionados a dedo, com procedência inquestionável e rigor técnico.</p>
+    </header>
+
+    <div class="cards">
+      <article class="card">
+        <div class="card-img"><span class="pill cyan">Pronta entrega</span><span class="year">2023</span><img class="photo" src="img/carros/gtr15.png" alt="Nissan GT-R preto em vista lateral" loading="lazy"></div>
+        <div class="card-body">
+          <div class="row"><h3>Nissan GT-R Nismo</h3><small class="red">12.000 KM</small></div>
+          <p>Motor V6 twin-turbo com 565 CV, tração integral e aerodinâmica Nismo em fibra de carbono.</p>
+          <div class="row"><small>Consulte valor</small><a class="btn btn-glass sm" href="#contato" data-car="gtr">Detalhes <span class="ms">arrow_forward</span></a></div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card-img"><span class="pill red">Certificado FP</span><span class="year">2022</span><img src="img/carros/ferrari.png" alt="Ferrari SF90 vermelha de frente na pista" loading="lazy"></div>
+        <div class="card-body">
+          <div class="row"><h3>Ferrari</h3><small class="red">6.500 KM</small></div>
+          <p>Pura linhagem de Maranello com 710 CV gerados pelo V8 e interior refinado em alcantara.</p>
+          <div class="row"><small>Consulte valor</small><a class="btn btn-glass sm" href="#contato" data-car="ferrari">Detalhes <span class="ms">arrow_forward</span></a></div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card-img"><span class="pill blue">Único dono</span><span class="year">2023</span><img src="img/carros/porsche.png" alt="Porsche 911 branco conversível" loading="lazy"></div>
+        <div class="card-body">
+          <div class="row"><h3>Porsche 911 Turbo</h3><small class="red">4.200 KM</small></div>
+          <p>Engenharia alemã com 640 CV, tração integral e acerto fino de suspensão.</p>
+          <div class="row"><small>Consulte valor</small><a class="btn btn-glass sm" href="#contato" data-car="porsche">Detalhes <span class="ms">arrow_forward</span></a></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SOBRE ================= -->
+<section class="sec sec-dark" id="sobre">
+  <div class="wrap about">
+    <header class="sec-head">
+      <span class="eyebrow red">Tradição &amp; excelência</span>
+      <h2>Sobre a FP Selection</h2>
+      <p>Mais que uma concessionária, um ateliê de alta performance automotiva. Cada veículo do acervo passa por avaliação técnica de mais de 150 itens periciados, com quilometragem autêntica, integridade estrutural e histórico impecável.</p>
+    </header>
+    <div class="stats">
+      <div><b data-count="12" data-prefix="+">+12</b><small>Anos no mercado</small></div>
+      <div><b class="cyan" data-count="100" data-suffix="%">100%</b><small>Procedência</small></div>
+      <div><b data-count="500" data-suffix="+">500+</b><small>Entregas VIP</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= DIFERENCIAIS ================= -->
+<section class="sec" id="diferenciais">
+  <div class="wrap">
+    <header class="sec-head center">
+      <span class="eyebrow blue">O padrão FP</span>
+      <h2>Diferenciais exclusivos</h2>
+    </header>
+    <div class="feats">
+      <div class="feat"><i class="ico"><span class="ms">verified</span></i><h3>Curadoria rigorosa</h3><p>Histórico veicular completo, laudo cautelar aprovado e revisão técnica exaustiva.</p></div>
+      <div class="feat"><i class="ico"><span class="ms">support_agent</span></i><h3>Concierge VIP</h3><p>Consultoria para colecionadores, aquisição discreta e atendimento privativo sob demanda.</p></div>
+      <div class="feat"><i class="ico"><span class="ms">local_shipping</span></i><h3>Entrega nacional</h3><p>Transporte seguro em carreta fechada climatizada para qualquer endereço no Brasil.</p></div>
+      <div class="feat"><i class="ico red"><span class="ms">security</span></i><h3>Blindagem &amp; garantia</h3><p>Assessoria em blindagem de alta tecnologia e garantia mecânica premium estendida.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTATO ================= -->
+<section class="sec sec-contact" id="contato">
+  <div class="wrap contact">
+    <div>
+      <header class="sec-head">
+        <span class="eyebrow white"><i class="dot-red"></i>Atendimento privativo</span>
+        <h2>Solicitar proposta VIP</h2>
+        <p>Agende uma visita exclusiva ao nosso ateliê ou fale diretamente com nossos consultores de supercarros.</p>
+      </header>
+      <div class="place">
+        <div class="place-t"><span class="ms cyan">location_on</span>Ateliê São Paulo</div>
+        <p>Avenida Europa, Jardim Europa • São Paulo, SP<br>Segunda a sexta: 09h às 19h | Sábados: 09h às 16h (sob agendamento)</p>
+        <a class="link" href="https://maps.google.com" target="_blank" rel="noopener">Abrir rota no Maps <span class="ms">open_in_new</span></a>
+      </div>
+    </div>
+
+    <form id="vip-form">
+      <label>Seu nome completo<span class="field"><span class="ms">person</span><input id="c-name" type="text" placeholder="Ex: Roberto Silveira" required></span></label>
+      <label>Telefone / WhatsApp<span class="field"><span class="ms">call</span><input id="c-phone" type="tel" placeholder="(11) 99999-9999" required></span></label>
+      <label>Veículo de interesse<span class="field"><span class="ms">sports_score</span>
+        <select id="c-car">
+          <option value="gtr">Nissan GT-R Nismo (565 CV)</option>
+          <option value="ferrari">Ferrari (710 CV)</option>
+          <option value="porsche">Porsche 911 Turbo (640 CV)</option>
+          <option value="custom">Outro superesportivo / sob demanda</option>
+        </select><span class="ms chev">expand_more</span></span></label>
+      <label>Mensagem ou preferência<textarea id="c-notes" rows="3" placeholder="Gostaria de agendar um atendimento na boutique..."></textarea></label>
+      <button class="btn btn-red wide" type="submit"><span class="ms">chat</span>Falar com especialista VIP</button>
+      <div class="toast" id="toast" role="status" hidden>Obrigado! Um consultor entrará em contato em instantes via WhatsApp.</div>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="foot-brand"><i class="dot-red"></i>FP SELECTION BOUTIQUE ATELIER</div>
+  <p>Av. Europa, Jardim Europa • São Paulo, SP<br>Curadoria exclusiva de superesportivos &amp; blindados</p>
+  <small>© 2026 FP SELECTION. Todos os direitos reservados.</small>
+</footer>
+
+<nav class="tabbar" aria-label="Navegação rápida">
+  <a href="#hero" class="is-active"><span class="ms">home</span>Home</a>
+  <a href="#engenharia-3d"><span class="ms">view_in_ar</span>Raio-X</a>
+  <a href="#acervo"><span class="ms">directions_car</span>Acervo</a>
+  <a href="#contato"><span class="ms">call</span>Contato</a>
+</nav>
+
+<script src="script.js"></script>
+</body>
+</html>

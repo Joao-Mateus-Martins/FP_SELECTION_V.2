@@ -1,0 +1,9 @@
+/*
+  FP SELECTION — CSS separado em três partes.
+  01: base, cabeçalho e hero
+  02: seções, componentes e layout
+  03: inspeção 3D e ajustes finais
+*/
+@import url("css/01-base-header-hero.css");
+@import url("css/02-secoes-e-layout.css");
+@import url("css/03-inspecao-e-ajustes.css");
