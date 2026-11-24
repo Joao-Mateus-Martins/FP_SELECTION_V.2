@@ -841,7 +841,7 @@ body {
 }
 
 .car.photo {
-  width: min(100%, 980px);
+  width: min(80%, 780px);
   padding: 0;
 }
 
