@@ -841,15 +841,16 @@ body {
 }
 
 .car.photo {
-  width: min(80%, 780px);
+  width: min(80%, 680px);
   padding: 0;
+  margin-top: 9%;
 }
 
 .car img.photo {
   filter: none;
   border-radius: 14px;
   -webkit-mask-image: radial-gradient(ellipse 72% 68% at 50% 50%, #000 60%, transparent 100%);
-  mask-image: radial-gradient(ellipse 72% 68% at 50% 50%, #000 60%, transparent 100%)
+  mask-image: radial-gradient(ellipse 72% 68% at 50% 50%, #000 60%, transparent 100%);
 }
 
 .card-img {
@@ -862,7 +863,7 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: none
+  filter: none;
 }
 
 
