@@ -892,6 +892,14 @@ body {
   min-width: 120px
 }
 
+@media (max-width:900px){
+  .cards{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+
 @media (max-width:480px) {
   .actions {
     flex-direction: column;
